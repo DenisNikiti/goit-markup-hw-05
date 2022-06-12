@@ -53,7 +53,11 @@
 
                  <h1 class="title-banner">Эффективные решения для вашего бизнеса</h1>
                 
-                 <button type="button" class="button"> Заказать услугу</button>
+                 <button type="button" class="button" data-modal-open> Заказать услугу</button>
+                  <div class="modal-fon is-hidden" data-modal>
+                          <div class="modal">  <button class="button-modal" type="button" data-modal-close><svg class="icon-close"> <use href="./symbol-defs.svg#icon-close"></use> </svg> </button>   </div>
+                          
+                  </div>
                 </div>
 
             </section>
@@ -206,6 +210,6 @@
 
 
 
-
+<script src="./modal.js"></script>
 </body>
 </html>
