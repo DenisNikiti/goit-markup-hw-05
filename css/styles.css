@@ -6,6 +6,7 @@
 --color-link-footer:  rgba(255, 255, 255, 0.6);
 --color-adress: #ffffff;
 --color-back-section: #F5F4FA;
+--transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -76,7 +77,7 @@ h1,h2,h3,ul,p{
   height: 4px;
    background-color: var(--color-blue);
 border-radius: 2px;
-bottom: 0;
+bottom: -1px;
 }
 
 .nav-item{
@@ -170,6 +171,7 @@ color: var(--color-secondary);
     align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
+    transition: color var(--transition);
 }
 
 
@@ -269,7 +271,7 @@ color: var(--color-secondary);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transform: translate(-50%, -50%);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform var(--transition);
   }
 
 
@@ -278,6 +280,12 @@ color: var(--color-secondary);
     pointer-events: none;
     
   }
+
+     .modal-fon.is-hidden .modal{
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+     }
+
   .icon-close{
     width: 18px;
     height: 18px;
@@ -411,8 +419,8 @@ margin-right: 0px;
 .text-images{
     position: absolute;
     z-index: 1;
-    width: 370px;
-    height: 70px;
+    width: 100%;
+    
        font-weight: 700;
         font-size: 14px;
         line-height: 16px;
@@ -477,7 +485,7 @@ background-color: var(--color-adress);
     width: 20px;
     height: 20px;
     fill: #AFB1B8;
-    
+    transition: fill var(--transition);
     
    
    
@@ -491,6 +499,7 @@ background-color: var(--color-adress);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: backround-color var(--transition);
     
 }
 
@@ -570,6 +579,7 @@ background-color: var(--color-adress);
         height: 92px;
     border: 1px solid #AFB1B8;
         border-radius: 4px;
+        transition: border-color var(--transition);
         
         
         
@@ -591,6 +601,7 @@ background-color: var(--color-adress);
 .icon-clients {
     width: 106px;
     height: 60px;
+    transition: fill var(--transition);
 
 
     fill: #AFB1B8;
@@ -674,11 +685,13 @@ background-color: var(--color-adress);
 
     
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color var(--transition);
     
 }
 
 .footer-item .icon-command{
     fill: #ffffff;
+    
 
 }
 
@@ -702,6 +715,7 @@ background-color: var(--color-adress);
      background-color: #F5F4FA;
      cursor: pointer;
     text-align: center;
+    transition: box-shadow var(--transition,) color var(--transition) backround-color var(--transition);
 }
 
 .button-portfolio:hover,
@@ -792,7 +806,11 @@ background-color: var(--color-adress);
 
 
 .link-procets:hover .procets-text-photo{
-   transform: translateY(-290px);
+   transform: translateY(-294px);
+}
+
+.link-procets:focus .procets-text-photo {
+    transform: translateY(-294px);
 }
 
 .border-procets{
