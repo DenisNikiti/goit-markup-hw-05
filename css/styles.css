@@ -499,7 +499,7 @@ background-color: var(--color-adress);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: backround-color var(--transition);
+    transition: background-color var(--transition);
     
 }
 
@@ -715,7 +715,7 @@ background-color: var(--color-adress);
      background-color: #F5F4FA;
      cursor: pointer;
     text-align: center;
-    transition: box-shadow var(--transition,) color var(--transition) backround-color var(--transition);
+    transition: box-shadow var(--transition), color var(--transition), background-color var(--transition);
 }
 
 .button-portfolio:hover,
@@ -824,6 +824,7 @@ background-color: var(--color-adress);
     flex-direction: column;
     color: inherit;
     text-decoration: none;
+    transition: box-shadow var(--transition);
 }
 
 .link-procets:hover, .link-procets:focus {
